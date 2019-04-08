@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require ('request');
 
 const forecast = (long, lang, callback) => {
   const url =
@@ -8,16 +8,16 @@ const forecast = (long, lang, callback) => {
     lang +
     '?units=si';
 
-  request({ url, json: true }, (error, { body }) => {
+  request ({url, json: true}, (error, {body}) => {
     if (error) {
-      callback('connection error ', undefined);
+      callback ('connection error ', undefined);
     } else if (body.error) {
-      callback(undefined, body.error);
+      callback (undefined, body.error);
     } else {
       const data = body.currently;
       // console.log(data);
-      callback(undefined, {
-        temperature: data.temperature,
+      callback (undefined, {
+        temperature: data.temperature + ' new temp ',
         rain: data.cloudCover,
       });
     }
