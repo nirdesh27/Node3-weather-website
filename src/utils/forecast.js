@@ -1,6 +1,7 @@
 const request = require ('request');
 
 const forecast = (long, lang, callback) => {
+  //need to change this key value for security 
   const url =
     'https://api.darksky.net/forecast/6925fe3689fca0224819af36e813b89b/' +
     long +
